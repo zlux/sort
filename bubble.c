@@ -1,7 +1,7 @@
 /*
 	Author: Zhu Liang
 	Time  : 30 Sep, 2014
-	Description: Bubble Sort Improved Version
+	Description: Bubble Sort Improved Version, :)
 */
 
 #include "stdio.h"
