@@ -1,5 +1,5 @@
 /*
-	Author: Julian
+	Author: Zhu Liang
 	Time  : 30 Sep, 2014
 	Description: Bubble Sort Improved Version
 */
