@@ -16,14 +16,19 @@ void bubbleSort(int* pArray, int iLength)
 {
 	int i = 0;
 	int j = iLength -1;
+	int iFlag = 1;
 	
-	for(i = 0; i<iLength; i++)
+	for(i = 0; i<iLength && iFlag; i++)
 	{
+		iFlag = 0;
 		j = iLength -1;
 		while(j > i)
 		{
 			if(pArray[j] < pArray[i])
-			swap(pArray, i, j);
+			{
+				swap(pArray, i, j);
+				iFlag = 1;
+			}
 			j--;
 		}
 	}
