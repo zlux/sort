@@ -1,7 +1,8 @@
 /*
 	Author: Zhu Liang
-	Time  : 30 Sep, 2014
-	Description: Shell Sort Improved Version, :)
+	Time  : 07 OTC, 2014
+	Description: Shell Sort, it is an imporved version of Insert Sort
+	Data Structure Textbook or Internet resources are too difficult to understand, it is better that I understand the princinple and write my own code. Like this piece of code. Just grind the iIncrease. And during each round, insert sort is used to make everything smooth.
 */
 
 #include "stdio.h"
@@ -16,23 +17,28 @@ void shellSort(int* pArray, int iLength)
 {
 	int i = 0;
 	int j = 0;
-	int k = 0;
-	
-	for (i = iLength/2; i>0; i = i/2)
+	int iTemp = 0;
+	int iIncrease = iLength;
+	do
 	{
-		for(j = i; j < iLength; j++)
+		iIncrease = iIncrease/3 +1;
+
+		for(i = iIncrease; i< iLength; i++)
 		{
-			for(k = j-i; k>=0; k = k-i)
+			if(pArray[i] < pArray[i-iIncrease])
 			{
-				if(pArray[k+i] >=pArray[k])
-					break;
-				else
+				//need to find a proper place
+				iTemp = pArray[i];
+				j = i-iIncrease;
+				while(pArray[j] > iTemp && j>=0)
 				{
-					swap(pArray, k, k+i);
+					pArray[j+iIncrease] = pArray[j];
+					j = j - iIncrease;
 				}
+				pArray[j+ iIncrease] = iTemp;
 			}
 		}
-	}
+	}while(iIncrease > 1);	
 }
 int main(void)
 {
